@@ -5,11 +5,93 @@
   --foreground: #171717;
 }
 
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-snow: #fcf7f8;
+  --color-purple: #a78bfa;
+  --color-madder-light: #fff1f2;
+  --color-desert: #f87060;
+  --color-desert-light: #fef3f2;
+  --color-darkblue: #00061c;
+  --color-green-light: #d1fae5;
+  --color-gray-light: #f3f4f6;
+  --color-blue-light: #dbeafe;
+  --color-blue: #3e3bee;
+  --color-gray: #71717a;
+  --color-header: #3b0764;
+}
+
+/* Custom Animations */
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Map Animations to Tailwind Classes */
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 1.5s ease-out forwards;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-snow: #fcf7f8;
+  --color-purple: #a78bfa;
+  --color-madder-light: #fff1f2;
+  --color-desert: #f87060;
+  --color-desert-light: #fef3f2;
+  --color-darkblue: #00061c;
+  --color-green-light: #d1fae5;
+  --color-gray-light: #f3f4f6;
+  --color-blue-light: #dbeafe;
+  --color-blue: #3e3bee;
+
+  --color-gray: #71717a;
+  --color-header: #3b0764;
+}
+
+@font-face {
+  font-family: "Peachi Light";
+  src: url("/fonts/Peachi-Light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Optional: Create a utility class */
+.font-peachi {
+  font-family: "Peachi Light", sans-serif;
+}
+
+@font-face {
+  font-family: "Malevi";
+  src: url("/fonts/MaleviceProRegular-zrqv1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Optional: Create a utility class */
+.font-malevi {
+  font-family: "Malevi", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,3 +106,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/*
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+/*scrollbar-width: none;  Firefox }*/
