@@ -5,6 +5,7 @@ import {
   FaWhatsapp,
   FaLinkedin,
 } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -57,20 +58,23 @@ export default function Footer() {
         <div className="text-center sm:text-left">
           <h3 className="font-semibold mb-3 sm:mb-4 text-purple">Contact us</h3>
           <p className="max-w-xs mx-auto sm:mx-0">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+          Ready to start your project? Contact KPM today for innovative digital solutions.
           </p>
-          <p className="mt-2 font-semibold">+923183561921</p>
+          <p className="mt-2 font-semibold">
+            <a href="tel:+2507804099312" className="hover:underline">+250 780 4099 312</a> / 
+            <a href="tel:+250791207043" className="hover:underline"> +250 791 207 043</a>
+          </p>
         </div>
       </div>
 
       {/* Social Media Icons */}
       <div className="mt-8 sm:mt-12 flex justify-center sm:justify-end sm:pr-16 lg:pr-32 space-x-4">
         {[
-          { icon: <FaFacebookF />, link: "#" },
-          { icon: <FaInstagram />, link: "#" },
-          { icon: <FaWhatsapp />, link: "#" },
-          { icon: <FaLinkedin />, link: "#" },
+          { icon: <FaFacebookF />, link: "https://www.facebook.com/share/1E1s136BBL/" },
+          { icon: <FaInstagram />, link: "https://www.instagram.com/klyplusandmore/profilecard/?igsh=MnRsMHI3Zms1MnAz" },
+          { icon: <FaTiktok />, link: "https://www.tiktok.com/@klyplusandmore?_t=ZM-8vEYQfT8K7K&_r=1" },
+          { icon: <FaWhatsapp />, link: "https://wa.me/2507804099312" },
+          { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/kly-plus-and-more-1b993a257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
         ].map(({ icon, link }, index) => (
           <a
             key={index}
@@ -84,7 +88,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="mt-8 sm:mt-10 text-center border-t border-gray-700 pt-6 text-sm">
-        © 2023 Copyright by KPM. All rights reserved.
+        © 2025 Copyright by KPM. All rights reserved.
       </div>
     </footer>
   );

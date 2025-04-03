@@ -70,19 +70,21 @@ export default function Contact() {
               <div className="bg-blue p-2 sm:p-3 rounded-full text-white">
                 <FaLaptopCode className="text-base sm:text-lg" />
               </div>
-              <p className="text-base sm:text-lg">123 Code Street, Dev City</p>
+              <p className="text-base sm:text-lg">Gisozi, Gasabo, Kigali City</p>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="bg-blue p-2 sm:p-3 rounded-full text-white">
                 <FaPhone className="text-base sm:text-lg" />
               </div>
-              <p className="text-base sm:text-lg">+1 234 567 890</p>
-            </div>
+              <p className="mt-2 font-semibold">
+            <a href="tel:+2507804099312" className="hover:underline">+250 780 4099 312</a> / 
+            <a href="tel:+250791207043" className="hover:underline"> +250 791 207 043</a>
+          </p>            </div>
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="bg-blue p-2 sm:p-3 rounded-full text-white">
                 <FaEnvelope className="text-base sm:text-lg" />
               </div>
-              <p className="text-base sm:text-lg">contact@yourcompany.com</p>
+              <p className="text-base sm:text-lg">klyplusandmore@gmail.com</p>
             </div>
           </div>
         </div>
