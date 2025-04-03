@@ -9,16 +9,42 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
+    phonenumber: "",
   });
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+
+  // Handle input changes
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  // Handle form submission
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      alert("Message sent successfully!");
+    setLoading(true);
+    setResponseMessage("");
+
+    try {
+      const response = await fetch("http://192.168.1.69:8080/training", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setResponseMessage("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "", phonenumber: "" });
+      } else {
+        setResponseMessage("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setResponseMessage("An error occurred. Please check your connection.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -29,12 +55,6 @@ export default function Contact() {
     >
       <Header isScrolled={false} />
       <div className="absolute inset-0 bg-opacity-30 backdrop-blur-[5px]"></div>
-      {/* <div className="relative text-center mb-12">
-        <div className="w-12 h-1 bg-gradient-to-r from-desert to-snow mx-auto mb-2"></div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl text-snow font-peachi font-bold">
-          Leave us a Message
-        </h2>
-      </div> */}
 
       <div className="my-12 relative flex flex-col md:flex-col lg:flex-row w-full max-w-5xl border border-purple rounded-3xl shadow-lg shadow-madder overflow-hidden bg-opacity-80 backdrop-blur-lg p-4 sm:p-6 md:p-8">
         <div className="w-full lg:w-1/2 flex flex-col items-center gap-4 sm:gap-6 p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-purple">
@@ -104,6 +124,20 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col">
+              <label className="text-snow mb-1 font-malevi">
+                Your Phone Number
+              </label>
+              <input
+                className="w-full border border-blue bg-transparent text-snow p-2 sm:p-3 text-base sm:text-lg rounded-lg focus:ring-2 focus:ring-blue outline-none"
+                type="text"
+                name="phonenumber"
+                value={formData.phonenumber}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="flex flex-col">
               <label className="text-snow mb-1 font-malevi">Your Message</label>
               <textarea
                 className="w-full border border-blue bg-transparent text-snow p-2 sm:p-3 text-base sm:text-lg rounded-lg focus:ring-2 focus:ring-blue outline-none resize-none h-24 sm:h-28"
@@ -117,10 +151,15 @@ export default function Contact() {
             <button
               type="submit"
               className="w-full bg-purple text-white py-2 sm:py-3 text-base sm:text-lg font-peachi rounded-lg hover:bg-header transition-all duration-300"
+              disabled={loading}
             >
-              Submit
+              {loading ? "Sending..." : "Submit"}
             </button>
           </form>
+
+          {responseMessage && (
+            <p className="text-center mt-4 text-white">{responseMessage}</p>
+          )}
         </div>
       </div>
     </section>
