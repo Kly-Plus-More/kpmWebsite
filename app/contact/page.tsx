@@ -27,13 +27,16 @@ export default function Contact() {
     setResponseMessage("");
 
     try {
-      const response = await fetch("http://192.168.1.69:8080/training", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://klyplusandmore.space/api/training",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         setResponseMessage("Message sent successfully!");
@@ -70,16 +73,25 @@ export default function Contact() {
               <div className="bg-blue p-2 sm:p-3 rounded-full text-white">
                 <FaLaptopCode className="text-base sm:text-lg" />
               </div>
-              <p className="text-base sm:text-lg">Gisozi, Gasabo, Kigali City</p>
+              <p className="text-base sm:text-lg">
+                Gisozi, Gasabo, Kigali City
+              </p>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="bg-blue p-2 sm:p-3 rounded-full text-white">
                 <FaPhone className="text-base sm:text-lg" />
               </div>
               <p className="mt-2 font-semibold">
-            <a href="tel:+2507804099312" className="hover:underline">+250 780 4099 312</a> / 
-            <a href="tel:+250791207043" className="hover:underline"> +250 791 207 043</a>
-          </p>            </div>
+                <a href="tel:+2507804099312" className="hover:underline">
+                  +250 780 4099 312
+                </a>{" "}
+                /
+                <a href="tel:+250791207043" className="hover:underline">
+                  {" "}
+                  +250 791 207 043
+                </a>
+              </p>{" "}
+            </div>
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="bg-blue p-2 sm:p-3 rounded-full text-white">
                 <FaEnvelope className="text-base sm:text-lg" />
@@ -152,7 +164,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-purple text-white py-2 sm:py-3 text-base sm:text-lg font-peachi rounded-lg hover:bg-header transition-all duration-300"
+              className="w-full bg-header text-white py-2 sm:py-3 text-base sm:text-lg font-peachi rounded-lg hover:bg-purple transition-all duration-300"
               disabled={loading}
             >
               {loading ? "Sending..." : "Submit"}

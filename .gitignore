@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Development tools (eslint, prettier, etc.)
+.eslint*
+.prettier*
+*.config.js  # Optional: Exclude config files if not needed in prod
+
+# Cache folders (Next.js, IDE, etc.)
+.next/cache/  # Exclude Next.js cache (not needed in prod)
+.idea/
+.vscode/
+
+# Lockfiles (if you only use one package manager)
+yarn.lock  # Keep only if using Yarn
+pnpm-lock.yaml  # Keep only if using pnpm

@@ -14,19 +14,19 @@ const projects = [
       "A seamless and secure digital wallet experience, designed for speed and convenience in everyday transactions.",
     image: "/images/mockup2.png",
     features: ["Secure Transactions", "Intuitive UI", "Cross-Platform Support"],
-    link: "/projects/swiftpay",
+    link: "/swiftpay",
   },
   {
-    title: "Ferme Clement Website",
+    title: "KPM Etudier au Rwanda",
     category: "Web Development",
     description:
       "A modern, visually appealing website designed to showcase Ferme Clement’s organic farming products and values.",
     image: "/images/kpmstudents.png",
     features: ["E-commerce Integration", "SEO Optimized", "Responsive Design"],
-    link: "/projects/ferme-clement",
+    link: "https://kpm-etude-au-rwanda.vercel.app/",
   },
   {
-    title: "InnovateX Web Platform",
+    title: "Ferme Clement",
     category: "Digital Transformation",
     description:
       "A powerful business platform that enables companies to digitalize their workflows efficiently.",
@@ -36,11 +36,24 @@ const projects = [
       "User Analytics",
       "Scalable Architecture",
     ],
-    link: "/projects/innovatex",
+    link: "https://fermeclement.site/",
+  },
+  {
+    title: "Urban Dental website",
+    category: "Digital Transformation",
+    description:
+      "A powerful business platform that enables companies to digitalize their workflows efficiently.",
+    image: "/images/dental.png",
+    features: [
+      "Automated Workflows",
+      "User Analytics",
+      "Scalable Architecture",
+    ],
+    link: "https://urban-dental-new.vercel.app/",
   },
 ];
 
-export default function Projects() {
+export default function MoreProjects() {
   useEffect(() => {
     AOS.init({ duration: 2000, once: true });
   }, []);
@@ -52,7 +65,7 @@ export default function Projects() {
       </section>
       <div className="text-center mb-16" data-aos="fade-up">
         <div className="w-12 h-1 bg-gradient-to-r from-desert to-snow mx-auto mb-4"></div>
-        <h2 className="text-4xl font-peachi">Our Work</h2>
+        <h2 className="text-4xl font-peachi">Our Works</h2>
         <p className="text-gray-400 mt-2">
           Explore some of our latest projects.
         </p>

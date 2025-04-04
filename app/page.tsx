@@ -40,7 +40,7 @@ export default function Home() {
           </p>
           <div className="mt-10">
             <a
-              href="#"
+              href="/contact"
               className="font-peachi px-6 py-2 font-diphy bg-snow text-header rounded-xl transition-all transform duration-500 hover:scale-110 hover:bg-purple hover:text-snow"
             >
               Let's get started
