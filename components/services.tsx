@@ -134,7 +134,7 @@ export default function Services() {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="relative border border-snow w-full h-[230px] p-4 bg-darkblue rounded-lg cursor-pointer flex flex-col group"
+            className="relative border border-snow w-full h-[280px] p-4 bg-darkblue rounded-lg cursor-pointer flex flex-col group"
             onClick={() => handleNavigation(service.path)}
             variants={itemVariants}
             whileHover="hover"

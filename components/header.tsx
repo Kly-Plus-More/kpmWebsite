@@ -183,7 +183,8 @@ export default function Header({ isScrolled }: { isScrolled: boolean }) {
               {[
                 { href: "/", text: "Home" },
                 { href: "/story", text: "About us" },
-                { href: "/services", text: "Services" },
+                { href: "/moreservices", text: "Services" },
+                { href: "/moreprojects", text: "Projects" },
                 { href: "/howitworks", text: "How it works" },
               ].map((link, i) => (
                 <motion.div

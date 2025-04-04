@@ -4,7 +4,7 @@ import Header from "@/components/header";
 
 export default function Story() {
   return (
-    <section className="relative flex flex-col items-center justify-center py-16 sm:py-24 md:py-32 bg-gradient-to-b from-darkblue to-header text-white overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center py-32 sm:py-24 md:py-32 bg-gradient-to-b from-darkblue to-header text-white overflow-hidden">
       <Header isScrolled={false} />
 
       {/* Floating Decorations */}
@@ -45,7 +45,7 @@ export default function Story() {
       </div>
 
       {/* Content Section */}
-      <div className="mt-16 sm:mt-20 w-full max-w-4xl px-6 sm:px-10 lg:px-16 space-y-16 relative z-10">
+      <div className="mt-16 sm:mt-20 w-full max-w-4xl px-3 sm:px-10 lg:px-16 space-y-16 relative z-10">
         {[
           {
             title: "Who We Are",

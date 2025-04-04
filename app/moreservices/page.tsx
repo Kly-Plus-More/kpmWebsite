@@ -93,8 +93,11 @@ export default function MoreServices() {
   ];
 
   return (
-    <section className="px-5 sm:px-10 md:px-16 lg:px-24 xl:px-32 py-16 flex flex-col justify-center items-center min-h-screen bg-darkblue text-snow">
-      <div className="text-center mb-16" data-aos="fade-up">
+    <section className=" py-10 pt-32 flex flex-col justify-center items-center min-h-screen bg-darkblue text-snow">
+      <div
+        className="px-5 sm:px-10 md:px-16 lg:px-24 xl:px-32 text-center mb-16"
+        data-aos="fade-up"
+      >
         <div className="w-12 h-1 bg-gradient-to-r from-desert to-snow mx-auto mb-4"></div>
         <h2 className="text-4xl font-peachi">Our Services</h2>
         <p className="text-xl text-gray-300 text-center font-peachi max-w-[1500px] mt-20 mx-auto">
@@ -119,7 +122,7 @@ export default function MoreServices() {
 
       <div
         data-aos="fade-up"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
+        className="px-5 sm:px-10 md:px-16 lg:px-24 xl:px-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
       >
         {services.map((service, index) => (
           <div

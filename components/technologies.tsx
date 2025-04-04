@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 
 const techStack = [
   { src: "/images/psql.png", alt: "PostgreSQL" },

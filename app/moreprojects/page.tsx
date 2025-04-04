@@ -59,7 +59,7 @@ export default function MoreProjects() {
   }, []);
 
   return (
-    <section className="relative py-32 px-10 bg-darkblue text-white">
+    <section className="px-5 sm:px-10 md:px-16 lg:px-24 xl:px-32 relative py-32 bg-darkblue text-white">
       <section>
         <Header isScrolled={false} />
       </section>
@@ -71,7 +71,7 @@ export default function MoreProjects() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 px-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {projects.map((project, index) => (
           <div
             key={index}
